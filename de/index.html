@@ -75,7 +75,7 @@
     <script src="../bootstrap.min.js"></script>
 
     <div class="container">
-        <div class="text-end">
+        <div id="language-switcher" class="text-end">
                             <a href="../en/">🇺🇸 English</a>
                     </div>
 
@@ -293,5 +293,11 @@
             <div>Am Nabenberg 16, 67705 Trippstadt</div>
         </div>
     </div>
+
+    <script type="application/javascript">
+        if (/windows/i.test(navigator.userAgent)) {
+            document.getElementById('language-switcher').classList.add('win')
+        }
+    </script>
 </body>
 </html>
