@@ -12,10 +12,14 @@
     
     <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": ["Hotel"],
+  "@type": "VacationRental",
+  "additionalType": "Apartment",
+  "identifier": "FerienwohnungPfälzerWald",
   "name": "Accommodation in the Palatinate Forest",
-  "descritpion": "Our house is located in Langensohl within the nice Pfälzer Wald (Palatinate Forest) not far from Kaiserslautern (K-Town). Whether you want to go hiking, biking, or just relax, you are very more than welcome here.",
+  "description": "Our house is located in Langensohl within the nice Pfälzer Wald (Palatinate Forest) not far from Kaiserslautern (K-Town). Whether you want to go hiking, biking, or just relax, you are very more than welcome here.",
   "url": "https://ferienwohnung-pfaelzer-wald.github.io/",
+  "latitude": "49.367820",
+  "longitude": "7.757870",
   "priceRange": "$$",
   "telephone": "+49 6306 99 99 781",
   "address": {
@@ -23,13 +27,116 @@
     "streetAddress": "Am Nabenberg 16",
     "addressLocality": "Trippstadt",
     "postalCode": "67705",
+    "addressRegion": "Rheinland-Pfalz",
     "addressCountry": "DE"
   },
+  "containsPlace": {
+    "@type": "Accommodation",
+    "bed": [
+      {
+        "@type": "BedDetails",
+        "numberOfBeds" : 2,
+        "typeOfBed": "SemiDouble"
+      },
+      {
+        "@type": "BedDetails",
+        "numberOfBeds" : 1,
+        "typeOfBed": "Single"
+      }
+    ],
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "value" : 4
+    },
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "kidsFriendly",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "crib",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "fireplace",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "heating",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "ironingBoard",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "kitchen",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "outdoorGrill",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "petsAllowed",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "selfCheckinCheckout",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "tv",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "wifi",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "internetType",
+        "value": "Free"
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "parkingType",
+        "value": "Free"
+      }
+    ],
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value" : 80,
+      "unitCode": "MTK"
+    },
+    "numberOfBathroomsTotal": 1,
+    "numberOfBedrooms": 3,
+    "numberOfRooms": 5
+  },
   "image": [
-    "https://ferienwohnung-pfaelzer-wald.github.io/img/terasse.jpg"
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/terasse.jpg",
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/terasse2.jpg",
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/grill.jpg",
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/wohnzimmer.jpg",
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/schlafzimmer_gross.jpg",
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/badezimmer.jpg",
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/kueche.jpg",
+    "https://ferienwohnung-pfaelzer-wald.github.io/img/schlafzimmer_klein.jpg"
   ],
-  "checkinTime": "12:00",
-  "checkoutTime": "12:00",
+  "checkinTime": "12:00:00+01:00",
+  "checkoutTime": "12:00:00+01:00",
+  "knowsLanguage": ["de-DE", "en-US", "es-ES"],
   "offers": [
     {
       "@type": "Offer",
