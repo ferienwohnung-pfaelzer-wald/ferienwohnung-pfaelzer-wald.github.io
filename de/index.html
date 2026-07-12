@@ -53,8 +53,9 @@
             });
         }
 
-        setupModal('kinderfreundlich-trigger', 'kidsModal', 'kidsModalBackdrop', 'closeKidsModal');
         setupModal('kueche-trigger', 'kitchenModal', 'kitchenModalBackdrop', 'closeKitchenModal');
+        setupModal('wifi-trigger', 'wifiModal', 'wifiModalBackdrop', 'closeWifiModal');
+        setupModal('kinderfreundlich-trigger', 'kidsModal', 'kidsModalBackdrop', 'closeKidsModal');
     });
 </script>
 
@@ -337,7 +338,7 @@
 
 <div class="amenities-section">
     <div class="amenities-grid">
-        <div class="amenity-card">
+        <div class="amenity-card clickable" id="wifi-trigger" role="button" tabindex="0" title="Details anzeigen">
             <span class="amenity-icon">📶</span>
             <span class="amenity-label">Kostenloses WLAN</span>
         </div>
@@ -526,8 +527,56 @@
         </div>
     </section>
 
-    <!-- Child-Friendly Modal -->
-    <div class="custom-modal" id="kidsModal" role="dialog" aria-modal="true" aria-labelledby="kidsModalTitle">
+        <div class="custom-modal" id="wifiModal" role="dialog" aria-modal="true" aria-labelledby="wifiModalTitle">
+        <div class="custom-modal-dialog">
+            <div class="custom-modal-content">
+                <div class="custom-modal-header">
+                    <h3 id="wifiModalTitle" class="custom-modal-title">Kostenloses WLAN</h3>
+                    <button class="custom-modal-close" id="closeWifiModal" aria-label="Schließen">&times;</button>
+                </div>
+                <div class="custom-modal-body">
+                    <p class="custom-modal-intro">Selbstverständlich gibt es Internet</p>
+
+                    <div class="modal-amenity-section">
+                        <ul>
+                            <li>Eigener Repeater in der Wohnung</li>
+                            <li>50 Mbit/s Internetgeschwindigkeit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="custom-modal-backdrop" id="wifiModalBackdrop"></div>
+
+        <div class="custom-modal" id="kitchenModal" role="dialog" aria-modal="true" aria-labelledby="kitchenModalTitle">
+        <div class="custom-modal-dialog">
+            <div class="custom-modal-content">
+                <div class="custom-modal-header">
+                    <h3 id="kitchenModalTitle" class="custom-modal-title">Vollständige Küche</h3>
+                    <button class="custom-modal-close" id="closeKitchenModal" aria-label="Schließen">&times;</button>
+                </div>
+                <div class="custom-modal-body">
+                    <p class="custom-modal-intro">Unsere Küche ist voll ausgestattet:</p>
+
+                    <div class="modal-amenity-section">
+                        <ul>
+                            <li>Kühl- / Gefrierschrank</li>
+                            <li>Herd und Ofen</li>
+                            <li>Spülmaschine</li>
+                            <li>Waschmaschine</li>
+                            <li>Kaffeemaschine</li>
+                            <li>Wasserkocher</li>
+                            <li>Toaster</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="custom-modal-backdrop" id="kitchenModalBackdrop"></div>
+
+        <div class="custom-modal" id="kidsModal" role="dialog" aria-modal="true" aria-labelledby="kidsModalTitle">
         <div class="custom-modal-dialog">
             <div class="custom-modal-content">
                 <div class="custom-modal-header">
@@ -540,8 +589,8 @@
                     <div class="modal-amenity-section">
                         <h4>🏠 Im Haus</h4>
                         <ul>
-                            <li>Ein Beistellbett</li>
-                            <li>Ein Babybett</li>
+                            <li>Beistellbett</li>
+                            <li>Babybett</li>
                             <li>Hochstuhl</li>
                             <li>Brettspiele</li>
                         </ul>
@@ -559,37 +608,6 @@
         </div>
     </div>
     <div class="custom-modal-backdrop" id="kidsModalBackdrop"></div>
-
-    <!-- Kitchen Modal -->
-    <div class="custom-modal" id="kitchenModal" role="dialog" aria-modal="true" aria-labelledby="kitchenModalTitle">
-        <div class="custom-modal-dialog">
-            <div class="custom-modal-content">
-                <div class="custom-modal-header">
-                    <h3 id="kitchenModalTitle" class="custom-modal-title">Vollständige Küche</h3>
-                    <button class="custom-modal-close" id="closeKitchenModal" aria-label="Schließen">&times;</button>
-                </div>
-                <div class="custom-modal-body">
-                    <p class="custom-modal-intro">Unsere Küche ist voll ausgestattet:</p>
-                    
-                    <div class="modal-amenity-section">
-                        <ul>
-                            <li>Kühl- / Gefrierschrank</li>
-                            <li>Herd</li>
-                            <li>Ofen</li>
-                            <li>Spülmaschine</li>
-                            <li>Toaster</li>
-                            <li>Wasserkocher</li>
-                            <li>Kaffeemaschine</li>
-                            <li>Waschmaschine</li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="custom-modal-backdrop" id="kitchenModalBackdrop"></div>
-
 </main>
 
     <footer class="site-footer">
