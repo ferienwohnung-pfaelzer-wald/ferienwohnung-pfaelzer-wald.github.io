@@ -11,7 +11,53 @@
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon.png" type="image/png">
     
-    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function setupModal(triggerId, modalId, backdropId, closeId) {
+            const trigger = document.getElementById(triggerId);
+            const modal = document.getElementById(modalId);
+            const backdrop = document.getElementById(backdropId);
+            const closeBtn = document.getElementById(closeId);
+
+            if (!trigger || !modal || !backdrop || !closeBtn) return;
+
+            function openModal() {
+                modal.classList.add('show');
+                backdrop.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('show');
+                backdrop.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+
+            trigger.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            // Accessibility support for keyboards
+            trigger.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('show')) {
+                    closeModal();
+                }
+            });
+        }
+
+        setupModal('kinderfreundlich-trigger', 'kidsModal', 'kidsModalBackdrop', 'closeKidsModal');
+        setupModal('kueche-trigger', 'kitchenModal', 'kitchenModalBackdrop', 'closeKitchenModal');
+    });
+</script>
+
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "VacationRental",
@@ -295,7 +341,7 @@
             <span class="amenity-icon">📶</span>
             <span class="amenity-label">Free Wi-Fi</span>
         </div>
-        <div class="amenity-card">
+        <div class="amenity-card clickable" id="kueche-trigger" role="button" tabindex="0" title="Show details">
             <span class="amenity-icon">🍳</span>
             <span class="amenity-label">Full kitchen</span>
         </div>
@@ -315,7 +361,7 @@
             <span class="amenity-icon">📺</span>
             <span class="amenity-label">TV</span>
         </div>
-        <div class="amenity-card">
+        <div class="amenity-card clickable" id="kinderfreundlich-trigger" role="button" tabindex="0" title="Show details">
             <span class="amenity-icon">👶</span>
             <span class="amenity-label">Family-friendly</span>
         </div>
@@ -479,6 +525,67 @@
                 🗺️ Show on Map            </a>
         </div>
     </section>
+
+    <!-- Child-Friendly Modal -->
+    <div class="custom-modal" id="kidsModal" role="dialog" aria-modal="true" aria-labelledby="kidsModalTitle">
+        <div class="custom-modal-dialog">
+            <div class="custom-modal-content">
+                <div class="custom-modal-header">
+                    <h3 id="kidsModalTitle" class="custom-modal-title">Family-Friendly Amenities</h3>
+                    <button class="custom-modal-close" id="closeKidsModal" aria-label="Close">&times;</button>
+                </div>
+                <div class="custom-modal-body">
+                    <p class="custom-modal-intro">We have everything you need for your little ones on site:</p>
+                    
+                    <div class="modal-amenity-section">
+                        <h4>🏠 In the house</h4>
+                        <ul>
+                            <li>An extra bed</li>
+                            <li>A baby crib</li>
+                            <li>High chair</li>
+                            <li>Board games</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-amenity-section">
+                        <h4>🌳 In the garden</h4>
+                        <ul>
+                            <li>Sandbox with toys</li>
+                            <li>Climbing frame with a slide</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="custom-modal-backdrop" id="kidsModalBackdrop"></div>
+
+    <!-- Kitchen Modal -->
+    <div class="custom-modal" id="kitchenModal" role="dialog" aria-modal="true" aria-labelledby="kitchenModalTitle">
+        <div class="custom-modal-dialog">
+            <div class="custom-modal-content">
+                <div class="custom-modal-header">
+                    <h3 id="kitchenModalTitle" class="custom-modal-title">Full kitchen</h3>
+                    <button class="custom-modal-close" id="closeKitchenModal" aria-label="Close">&times;</button>
+                </div>
+                <div class="custom-modal-body">
+                    <p class="custom-modal-intro">Our kitchen is fully equipped:</p>
+                    
+                    <div class="modal-amenity-section">
+                        <ul>
+                            <li>Fridge / Freezer</li>
+                            <li>Stove</li>
+                            <li>Oven</li>
+                            <li>Dishwasher</li>
+                            <li>Toaster</li>
+                            <li>Kettle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="custom-modal-backdrop" id="kitchenModalBackdrop"></div>
 
 </main>
 
